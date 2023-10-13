@@ -25,6 +25,11 @@ contract OurTokenTest is StdCheats, Test {
         ourToken.transfer(bob, STARTING_BALANCE);
     }
 
+    function testTokenOwner() public {
+        assertEq(ourToken.adminintrator(), msg.sender);
+    }
+
+
     function testBobBalance() public {
         assertEq(STARTING_BALANCE, ourToken.balanceOf(bob));
     }
