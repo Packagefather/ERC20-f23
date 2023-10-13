@@ -39,7 +39,6 @@ contract OurTokenTest is StdCheats, Test {
         assertEq(ourToken.balanceOf(bob), STARTING_BALANCE - 100, "Bob's balance should decrease by 100");
     }
 
-
     function testTransferFrom() public {
         vm.prank(bob);
         uint256 amount = 100;
@@ -56,7 +55,6 @@ contract OurTokenTest is StdCheats, Test {
         (bool revertsAsExpected) = ourToken.transferFrom(bob, alice, amount);
         assertTrue(!revertsAsExpected, "expectRevert: call did not revert as it should");
     }
-
 
     function testAllowances() public {
         uint256 initialAllowance = 1000;
